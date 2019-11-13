@@ -35,16 +35,17 @@
     height 50px
     align-items center
     padding 10px 16px
-    position: relative;
+    position: relative
+    line-height 24px
     &:after
-      content: '';
-      background-color: #eee;
-      position: absolute;
-      left: 15px;
-      height: 1px;
-      width: auto;
-      right: 0;
-      bottom: 0;
+      content: ''
+      background-color: #eee
+      position: absolute
+      left: 15px
+      height: 1px
+      width: auto
+      right: 0
+      bottom: 0
     .md-list-thumb
       width 34px
       height 34px
