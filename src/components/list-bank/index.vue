@@ -62,9 +62,7 @@
         color #999
     .md-list-arrow
       margin-left: 10px
-      margin-right: -2px
-      width: 12px
-      padding: 16px 0
+      text-align right
       font-size 14px
       color #333
 </style>

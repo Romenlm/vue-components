@@ -3,9 +3,9 @@
     <div class="md-search-input">
       <div class="md-search-icon"><md-icon name="search" size="sm"></md-icon></div>
       <div class="md-search-value">
-        <input id="search" type="text" v-model="inputBindValue" @input="inputload" :placeholder="placeholder">
+        <input id="search" type="text" v-model="inputValue" @input="inputLoad" :placeholder="placeholder">
       </div>
-      <div class="md-search-clear" @click="closeValue"><md-icon name="clear" size="xs"></md-icon></div>
+      <div class="md-search-clear" v-show="inputValue" @click="closeValue"><md-icon name="clear" size="xs"></md-icon></div>
     </div>
   </div>
 </template>
@@ -32,29 +32,22 @@
     data () {
       return {
         inputValue: '',
-        inputBindValue: this.value
       }
     },
     watch: {
-      inputValue(val) {
-        this.inputBindValue = val
-        if (val !== this.value) {
-          this.$emit('input', val)
-        }
+      value(val) {
+        if (val === this.currentValue) return;
+        this.currentValue = val;
       }
     },
     methods: {
-      // setCurrentValue(value){
-      //   if (value === this.currentValue) return;
-      //   this.currentValue = value;
-      // },
-      inputload(event){
+      inputLoad(event){
         let value = event.target.value;
         this.$emit('input', value)
       },
       closeValue(){
-        this.inputBindValue = ''
-        this.$emit('input', this.inputBindValue)
+        this.inputValue = ''
+        this.$emit('input', this.inputValue)
       }
     }
   }
