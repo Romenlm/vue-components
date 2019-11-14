@@ -1,22 +1,21 @@
 <template>
   <div class="md-search-item am-input-autoclear">
     <div class="md-search-input">
-      <div class="md-search-icon"><md-icon name="search" size="sm"></md-icon></div>
+<!--      <md-icon class="md-search-icon" name="search" size="lg"></md-icon>-->
+      <img class="md-search-icon" src="./icon/search.png">
       <div class="md-search-value">
         <input id="search" type="text" v-model="inputValue" @input="inputLoad" :placeholder="placeholder">
       </div>
-      <div class="md-search-clear" v-show="inputValue" @click="closeValue"><md-icon name="clear" size="xs"></md-icon></div>
+      <md-icon v-show="inputValue" @click="closeValue" class="md-search-clear" name="clear" size="lg"></md-icon>
     </div>
   </div>
 </template>
 
 <script>
   import {Icon} from 'mand-mobile'
-  import MdIcon from "mand-mobile/components/icon/index";
   export default {
     name: "md-search-item",
     components: {
-      MdIcon,
       [Icon.name]: Icon
     },
     props: {
@@ -68,10 +67,10 @@
     align-items center
     border-radius 4px
     .md-search-icon
-      height 24px
+      display block
       width 24px
+      height 24px
       margin 0px 8px
-      line-height 24px
       color rgba(0,0,0,.05);
     .md-search-value
       flex 1
@@ -83,10 +82,7 @@
         outline none
         background-color rgba(0, 0, 0, 0)
     .md-search-clear
-      width 20px
-      height 20px
       margin 0px 8px
-      line-height 20px
       color rgba(0,0,0,.05)
 
 </style>
