@@ -1,39 +1,48 @@
 <template>
   <div>
-    <md-list-bank></md-list-bank>
-    <md-search-item v-model="search"></md-search-item>
-    {{search}}
-<!--    <test></test>-->
-    <row :gutter="40">
-      <cidc-col :span="24"><div style="background-color: coral">1</div></cidc-col>
-      <cidc-col :span="24"><div style="background-color: darkseagreen">1</div></cidc-col>
-    </row>
+    <span class="btn" v-for="(item, index) in com" @click="goto(item)" :key="index">{{item.title}}</span>
   </div>
 </template>
 
 <script>
-  import MdListBank from '../components/list-bank'
-  import MdSearchItem from '../components/search-item'
-  // import Test from '../components/row'
-  import Row from '../components/row/row'
-  import CidcCol from '../components/row/col'
   export default {
     name: "Home",
     components: {
-      MdListBank,
-      MdSearchItem,
-      // Test,
-      Row,
-      CidcCol
     },
     data() {
       return {
-        search: ''
+        com: [
+          {
+            title: '银行列表',
+            name: 'list-bank'
+          }
+        ]
+      }
+    },
+    methods: {
+      goto(item) {
+        let params = {
+          name: 'ShowComponent',
+          params: {
+            item: item
+          }
+        }
+
+        this.$router.push(params)
       }
     }
   }
 </script>
 
 <style scoped>
-
+.btn{
+  display: block;
+  width: 90%;
+  height: 40px;
+  margin: 10px auto;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+}
 </style>

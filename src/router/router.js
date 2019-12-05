@@ -9,6 +9,11 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/showComponent',
+      name: 'ShowComponent',
+      component: ()=>import('../views/ShowComponent')
     }
 
   ]
