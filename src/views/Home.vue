@@ -14,21 +14,18 @@
         com: [
           {
             title: '银行列表',
-            name: 'list-bank'
+            name: 'ShowComponent'
+          },
+          {
+            title: '搜索框',
+            name: 'searchTest'
           }
         ]
       }
     },
     methods: {
       goto(item) {
-        let params = {
-          name: 'ShowComponent',
-          params: {
-            item: item
-          }
-        }
-
-        this.$router.push(params)
+        this.$router.push(item.name)
       }
     }
   }

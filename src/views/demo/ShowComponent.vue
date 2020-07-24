@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="compontentName"></component>
+    <list-bank></list-bank>
   </div>
 </template>
 
@@ -15,10 +15,6 @@
       return {
         compontentName: ''
       }
-    },
-    mounted() {
-      // eslint-disable-next-line no-console
-      this.compontentName = this.$route.params.item.name
     }
   }
 </script>

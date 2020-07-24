@@ -13,7 +13,12 @@ export default new Router({
     {
       path: '/showComponent',
       name: 'ShowComponent',
-      component: ()=>import('../views/ShowComponent')
+      component: ()=>import('../views/demo/ShowComponent')
+    },
+    {
+      path: '/searchTest',
+      name: 'searchTest',
+      component: ()=>import('../views/demo/SearchItemTest')
     }
 
   ]
